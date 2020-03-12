@@ -1,0 +1,24 @@
+.one-point-app-spinner {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+.one-point-app-spinner:after {
+    content: " ";
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 4px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: one-point-app-spinner 1.2s linear infinite;
+}
+@keyframes one-point-app-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

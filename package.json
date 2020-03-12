@@ -1,0 +1,25 @@
+{
+  "name": "one-point-vanilla",
+  "version": "1.0.0",
+  "description": "",
+  "main": "users.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svoronuk/one-point-vanilla.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svoronuk/one-point-vanilla/issues"
+  },
+  "homepage": "https://github.com/svoronuk/one-point-vanilla#readme",
+  "devDependencies": {
+    "json-loader": "^0.5.7",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
