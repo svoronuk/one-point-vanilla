@@ -9,7 +9,11 @@
 </head>
 <body>
     <script type="text/javascript">
-        userList.render();
+        list.render({
+            urlAll: 'https://hr.oat.taocloud.org/v1/users',
+            urlInfo: 'https://hr.oat.taocloud.org/v1/user',
+            rowId: 'userId'
+        });
     </script>
 </body>
 </html>

@@ -1,11 +1,11 @@
-.one-point-app-user-wrapper {
+.one-point-app-list-wrapper {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 
-.one-point-app-user-list {
+.one-point-app-list {
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -13,20 +13,21 @@
     border: 1px solid #000;
 }
 
-.one-point-app-user {
+.one-point-app-row {
     display: flex;
     font-size: 16px;
     border-bottom: 1px solid #000;
     flex-direction: column;
 }
 
-.one-point-app-user:hover {
+.one-point-app-row:hover {
     cursor: pointer;
 }
 
-.one-point-app-user * {
+.one-point-app-row * {
     pointer-events: none;
     display: flex;
+    flex: 1;
 }
 .one-point-app-shortly{
     background-color: #cccccc;
@@ -35,17 +36,14 @@
 
 .one-point-app-lastname {
     padding-right: 15px;
-    width: 50%;
 }
-.one-point-app-firstname{
-    width:50%;
-}
+
 .one-point-app-extended{
     flex-direction: column;
 }
 
 /*toolbar*/
-.one-point-app-user-toolbar{
+.one-point-app-list-toolbar{
     display: flex;
     justify-content: flex-start;
     width: 400px;
@@ -53,7 +51,7 @@
     margin-bottom: -1px;
     box-sizing: border-box;
 }
-.one-point-app-user-toolbar>*{
+.one-point-app-list-toolbar>*{
     flex-grow: 1;
     cursor: pointer;
 }

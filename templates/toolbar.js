@@ -2,30 +2,21 @@ import { getWithNamespace, purify } from '../services/helper';
 import loader from './loader';
 import { logDebug } from '../services/error-logger';
 import storage from '../services/storage';
-import { USERS_LIST } from '../constants';
+import { TOOLBAR_CLASS, USERS_LIST } from '../constants';
 
 export default class Toolbar {
     constructor() {
         this.restrictedFields = [
             'email',
-            'pasword',
+            'password',
         ];
     }
 
-    create(sortingFunc) {
-        const cls = getWithNamespace('user-toolbar');
+    create() {
+        const cls = getWithNamespace('list-toolbar');
         this.el = document.createElement('div');
         this.el.classList.add(cls);
         this.el.appendChild(loader());
-
-        this.sortHandler = sortingFunc;
-        if (typeof this.sortHandler !== 'function') {
-            logDebug('Toolbar initialized without sorting function');
-            this.sortHandler = () => {};
-        }
-
-        // const handler = sortRows.bind(this);
-        this.el.addEventListener('click', e => sortRows(e, this.sortHandler));
 
         return this.el;
     }
@@ -37,10 +28,9 @@ export default class Toolbar {
             logDebug('Toolbar rendered empty because of incorrect data');
             return '';
         }
-        const inner = fields.reduce((acc, field) => acc += this.restrictedFields.includes(field)
+        this.el.innerHTML = fields.reduce((acc, field) => acc += (this.restrictedFields.includes(field)
             ? ''
-            : `<div data-sort-key="${field}" class="${getWithNamespace(field)} ${getWithNamespace('toolbar')}">${purify(field)}</div>`, '');
-        this.el.innerHTML = inner;
+            : `<div data-sort-key="${field}" class="${getWithNamespace(field)} ${getWithNamespace(TOOLBAR_CLASS)}">${purify(field)}</div>`), '');
 
         return this.el;
     }
